@@ -116,7 +116,7 @@ function main() {
     echo "Downloading Kickstart and extracting to $DEST_DIR/.config/nvim"
     echo
     curl -fsSL https://github.com/nvim-lua/kickstart.nvim/archive/refs/heads/master.tar.gz | tar xzC "$DEST_DIR/.config/nvim" --strip-components=1
-     
+
     cat > "$HOME/.local/bin/kvim" <<EOF
 #!/bin/bash
 

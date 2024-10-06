@@ -17,9 +17,9 @@ function usage() {
     cat <<EOF
 Usage: $0 [options] [--] [ <DEST_DIR> ]
 
-Install Neovim + LazyVim to <DEST_DIR>
+Install Neovim + SpaceVim to <DEST_DIR>
 
-<DEST_DIR> must not exist. Defaults to \$HOME/lvim
+<DEST_DIR> must not exist. Defaults to \$HOME/spacevim
 
 options:
     --help, -h
@@ -55,7 +55,7 @@ function main() {
     done
 
     if (( $# == 0 )); then
-        DEST_DIR="$HOME/lvim"
+        DEST_DIR="$HOME/svim"
     else
         DEST_DIR=$1; shift
     fi
@@ -113,11 +113,11 @@ function main() {
     curl -fsSL https://github.com/$REPO/releases/download/stable/$PKG.tar.gz | tar xzC "$DEST_DIR"
 
     echo
-    echo "Downloading LazyVim starter and extracting to $DEST_DIR/.config/nvim"
+    echo "Downloading SpaceVim and installing"
     echo
-    curl -fsSL https://github.com/LazyVim/starter/archive/refs/heads/main.tar.gz | tar xzC "$DEST_DIR/.config/nvim" --strip-components=1
+    curl -fsSL https://spacevim.org/install.sh | XDG_CONFIG_HOME="$DEST_DIR/.config" bash -s -- --install neovim
 
-    cat > "$HOME/.local/bin/lvim" <<EOF
+    cat > "$HOME/.local/bin/svim" <<EOF
 #!/bin/bash
 
 XDG_CONFIG_HOME="$DEST_DIR/.config" \
@@ -127,10 +127,10 @@ XDG_CACHE_HOME="$DEST_DIR/.cache" \
 exec "$DEST_DIR/$PKG/bin/nvim" "\$@"
 EOF
 
-    chmod +x "$HOME/.local/bin/lvim"
+    chmod +x "$HOME/.local/bin/svim"
 
     echo
-    echo "LazyVim installed to $DEST_DIR, start with $HOME/.local/bin/lvim"
+    echo "SpaceVim installed to $DEST_DIR, start with $HOME/.local/bin/svim"
 }
 
 main "$@"

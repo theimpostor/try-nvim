@@ -39,3 +39,19 @@ curl -fsSL https://github.com/theimpostor/try-nvim/raw/refs/heads/main/lazyvim.s
 ```
 
 Installs [LazyVim](https://www.lazyvim.org/) to `$HOME/lvim`
+
+## SpaceVim
+
+```
+curl -fsSL https://github.com/theimpostor/try-nvim/raw/refs/heads/main/spacevim.sh | bash
+```
+
+Installs [SpaceVim](https://spacevim.org/) to `$HOME/svim`
+
+## AstroNvim
+
+```
+curl -fsSL https://github.com/theimpostor/try-nvim/raw/refs/heads/main/astronvim.sh | bash
+```
+
+Installs [AstroNvim](https://astronvim.com/) to `$HOME/avim`
