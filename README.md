@@ -1,4 +1,5 @@
 # try-nvim
+
 Scripts to install standalone instances of various Neovim distros
 
 Each script in this repo downloads the latest stable release of [Neovim](https://neovim.io/) (linux or
@@ -16,7 +17,7 @@ Requires `curl`, `bash`, and `tar`.
 ## Neovim
 
 ```
-curl https://raw.githubusercontent.com/theimpostor/try-nvim/refs/heads/main/neovim.sh | /bin/bash
+curl -L https://github.com/theimpostor/try-nvim/raw/refs/heads/main/neovim.sh | /bin/bash
 ```
 
 Installs Neovim without any extra configuration to `$HOME/nvim`
@@ -24,7 +25,7 @@ Installs Neovim without any extra configuration to `$HOME/nvim`
 ## Neovim Kickstart
 
 ```
-curl https://raw.githubusercontent.com/theimpostor/try-nvim/refs/heads/main/kickstart.sh | /bin/bash
+curl -L https://github.com/theimpostor/try-nvim/raw/refs/heads/main/kickstart.sh | /bin/bash
 ```
 
 Installs Neovim + [Kickstart](https://github.com/nvim-lua/kickstart.nvim) to
@@ -33,7 +34,7 @@ Installs Neovim + [Kickstart](https://github.com/nvim-lua/kickstart.nvim) to
 ## LazyVim
 
 ```
-curl https://raw.githubusercontent.com/theimpostor/try-nvim/refs/heads/main/lazyvim.sh | /bin/bash
+curl -L https://github.com/theimpostor/try-nvim/raw/refs/heads/main/lazyvim.sh | /bin/bash
 ```
 
 Installs [LazyVim](https://www.lazyvim.org/) to `$HOME/lvim`
