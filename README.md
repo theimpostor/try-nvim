@@ -3,11 +3,8 @@
 Scripts to install standalone instances of Neovim or a Neovim distro.
 
 Each script in this repo downloads the latest stable release of [Neovim](https://neovim.io/) (linux or
-mac) in to the user's home directory and adds a script to `$HOME/.local/bin` to
-launch Neovim with it's own
-[XDG](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) config and data dirs. That way different
-distros of Neovim can be installed and tried out without interfering with each
-other.
+mac) in to the user's home directory and adds a script to `$HOME/.local/bin` to launch Neovim with it's own
+[XDG](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) directories. This allows multiple installations of Neovim to coexist with separate configuration, plugins, and themes etc.
 
 # Prerequisites
 
