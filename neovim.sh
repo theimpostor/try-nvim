@@ -108,9 +108,9 @@ function main() {
     mkdir -p "$HOME/.local/bin"
 
     echo
-    echo "Downloading neovim from $NEOVIM_PKG_URL and extracting to $DEST_DIR"
+    echo "Downloading Neovim from $NEOVIM_PKG_URL and extracting to $DEST_DIR"
     echo
-    curl -L https://github.com/$REPO/releases/download/stable/$PKG.tar.gz | tar xzC "$DEST_DIR"
+    curl -fsSL https://github.com/$REPO/releases/download/stable/$PKG.tar.gz | tar xzC "$DEST_DIR"
 
     cat > "$HOME/.local/bin/nvim" <<EOF
 #!/bin/bash

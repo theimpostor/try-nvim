@@ -17,7 +17,7 @@ function usage() {
     cat <<EOF
 Usage: $0 [options] [--] [ <DEST_DIR> ]
 
-Install neovim + lazyvim to <DEST_DIR>
+Install Neovim + LazyVim to <DEST_DIR>
 
 <DEST_DIR> must not exist. Defaults to \$HOME/lvim
 
@@ -48,7 +48,7 @@ function main() {
         esac; shift
     done
 
-    for cmd in curl tar ; do
+    for cmd in curl tar git ; do
         if ! command -v $cmd >/dev/null 2>&1; then
             die "ERROR: '$cmd' not found in path"
         fi
@@ -108,14 +108,14 @@ function main() {
     mkdir -p "$HOME/.local/bin"
 
     echo
-    echo "Downloading neovim from $NEOVIM_PKG_URL and extracting to $DEST_DIR"
+    echo "Downloading Neovim from $NEOVIM_PKG_URL and extracting to $DEST_DIR"
     echo
-    curl -L https://github.com/$REPO/releases/download/stable/$PKG.tar.gz | tar xzC "$DEST_DIR"
+    curl -fsSL https://github.com/$REPO/releases/download/stable/$PKG.tar.gz | tar xzC "$DEST_DIR"
 
     echo
     echo "Downloading LazyVim starter and extracting to $DEST_DIR/.config/nvim"
     echo
-    curl -L https://github.com/LazyVim/starter/archive/refs/heads/main.tar.gz | tar xzC "$DEST_DIR/.config/nvim" --strip-components=1
+    curl -fsSL https://github.com/LazyVim/starter/archive/refs/heads/main.tar.gz | tar xzC "$DEST_DIR/.config/nvim" --strip-components=1
      
     cat > "$HOME/.local/bin/lvim" <<EOF
 #!/bin/bash

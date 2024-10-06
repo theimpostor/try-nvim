@@ -1,23 +1,24 @@
 # try-nvim
 
-Scripts to install standalone instances of various Neovim distros
+Scripts to install standalone instances of Neovim or a Neovim distro.
 
 Each script in this repo downloads the latest stable release of [Neovim](https://neovim.io/) (linux or
 mac) in to the user's home directory and adds a script to `$HOME/.local/bin` to
-launch the copy of Neovim with it's own config and data dirs. That way different
+launch Neovim with it's own
+[XDG](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) config and data dirs. That way different
 distros of Neovim can be installed and tried out without interfering with each
 other.
 
 # Prerequisites
 
-Requires `curl`, `bash`, and `tar`.
+Requires `curl`, `bash`, and `tar`. Also requires `git` to install plugins.
 
 # Usage
 
 ## Neovim
 
 ```
-curl -L https://github.com/theimpostor/try-nvim/raw/refs/heads/main/neovim.sh | /bin/bash
+curl -fsSL https://github.com/theimpostor/try-nvim/raw/refs/heads/main/neovim.sh | bash
 ```
 
 Installs Neovim without any extra configuration to `$HOME/nvim`
@@ -25,7 +26,7 @@ Installs Neovim without any extra configuration to `$HOME/nvim`
 ## Neovim Kickstart
 
 ```
-curl -L https://github.com/theimpostor/try-nvim/raw/refs/heads/main/kickstart.sh | /bin/bash
+curl -fsSL https://github.com/theimpostor/try-nvim/raw/refs/heads/main/kickstart.sh | bash
 ```
 
 Installs Neovim + [Kickstart](https://github.com/nvim-lua/kickstart.nvim) to
@@ -34,7 +35,7 @@ Installs Neovim + [Kickstart](https://github.com/nvim-lua/kickstart.nvim) to
 ## LazyVim
 
 ```
-curl -L https://github.com/theimpostor/try-nvim/raw/refs/heads/main/lazyvim.sh | /bin/bash
+curl -fsSL https://github.com/theimpostor/try-nvim/raw/refs/heads/main/lazyvim.sh | bash
 ```
 
 Installs [LazyVim](https://www.lazyvim.org/) to `$HOME/lvim`
