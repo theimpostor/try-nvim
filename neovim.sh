@@ -107,7 +107,9 @@ function main() {
     mkdir -p "$DEST_DIR/.local/state"
     mkdir -p "$HOME/.local/bin"
 
+    echo
     echo "Downloading neovim from $NEOVIM_PKG_URL and extracting to $DEST_DIR"
+    echo
     curl -L https://github.com/$REPO/releases/download/stable/$PKG.tar.gz | tar xzC "$DEST_DIR"
 
     cat > "$HOME/.local/bin/nvim" <<EOF
@@ -122,6 +124,7 @@ EOF
 
     chmod +x "$HOME/.local/bin/nvim"
 
+    echo
     echo "Neovim installed to $DEST_DIR, start with $HOME/.local/bin/nvim"
 }
 

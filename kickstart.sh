@@ -107,10 +107,14 @@ function main() {
     mkdir -p "$DEST_DIR/.local/state"
     mkdir -p "$HOME/.local/bin"
 
+    echo
     echo "Downloading neovim from $NEOVIM_PKG_URL and extracting to $DEST_DIR"
+    echo
     curl -L https://github.com/$REPO/releases/download/stable/$PKG.tar.gz | tar xzC "$DEST_DIR"
 
+    echo
     echo "Downloading Kickstart and extracting to $DEST_DIR/.config/nvim"
+    echo
     curl -L https://github.com/nvim-lua/kickstart.nvim/archive/refs/heads/master.tar.gz | tar xzC "$DEST_DIR/.config/nvim" --strip-components=1
      
     cat > "$HOME/.local/bin/kvim" <<EOF
@@ -125,6 +129,7 @@ EOF
 
     chmod +x "$HOME/.local/bin/kvim"
 
+    echo
     echo "Neovim Kickstart installed to $DEST_DIR, start with $HOME/.local/bin/kvim"
 }
 
