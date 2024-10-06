@@ -1,10 +1,10 @@
 # try-nvim
 
-Scripts to install standalone instances of Neovim or a Neovim distro.
+[try-nvim](https://github.com/theimpostor/try-nvim) is a set of pipe-to-shell scripts which will let you try out various [Neovim](https://neovim.io) distros without effecting your default Vim/Neovim installation (if any). The scripts will set up a copy of the latest stable Neovim (linux or mac only) in your home directory with a unique set of [XDG](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) directories which allow the different distros to operate completely independently of each other.
 
-Each script in this repo downloads the latest stable release of [Neovim](https://neovim.io/) (linux or
-mac) in to the user's home directory and adds a script to `$HOME/.local/bin` to launch Neovim with it's own
-[XDG](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) directories. This allows multiple installations of Neovim to coexist with separate configuration, plugins, and themes etc.
+These scripts can also be used to quickly install Neovim on machines where root permissions are not available.
+
+Uninstallation is simply deleting the directory where the distro was installed and it's launcher script under `$HOME/.local/bin`
 
 # Prerequisites
 
