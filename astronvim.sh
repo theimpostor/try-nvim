@@ -69,8 +69,8 @@ function main() {
     OS=$(uname -s); readonly OS
     ARCH=$(uname -m); readonly ARCH
 
-    # https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz (glibc >= 2.31), nvim-linux64/bin/nvim
-    # https://github.com/neovim/neovim-releases/releases/download/stable/nvim-linux64.tar.gz (glibc >= 2.17), nvim-linux64/bin/nvim
+    # https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.tar.gz (glibc >= 2.31), nvim-linux-x86_64/bin/nvim
+    # https://github.com/neovim/neovim-releases/releases/download/stable/nvim-linux-x86_64.tar.gz (glibc >= 2.17), nvim-linux-x86_64/bin/nvim
     # https://github.com/neovim/neovim/releases/download/stable/nvim-macos-arm64.tar.gz, nvim-macos-arm64/bin/nvim
     # https://github.com/neovim/neovim/releases/download/stable/nvim-macos-x86_64.tar.gz, nvim-macos-x86_64/bin/nvim
     case $OS in
@@ -79,7 +79,7 @@ function main() {
             REPO=neovim/neovim-releases
             case $ARCH in
                 x86_64)
-                    PKG=nvim-linux64
+                    PKG=nvim-linux-x86_64
                     ;;
                 *) die "ERROR: unsupported ARCH: $ARCH" ;;
             esac
